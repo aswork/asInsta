@@ -1,0 +1,19 @@
+<%= form_for(@pict) do |f| %>
+
+<% if @pict.errors.any? %>
+    <div id="error_explanation">
+      <h2>エラー：画像を選択してください</h2>
+    </div>
+<% end %>
+
+<%= f.label :image %>
+<%= f.file_field :image %>
+<%= f.hidden_field :image_cache %>
+<br>
+<%= f.label :content %>
+<%= f.text_field :content, class: 'form-control' %>
+<br>
+<%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to "投稿一覧画面にもどる", picts_path %>
