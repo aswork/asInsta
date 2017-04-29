@@ -1,4 +1,5 @@
 class PictsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pict, only: [:edit, :update, :destroy]
   def index
     @picts = Pict.all.reverse_order
@@ -10,6 +11,7 @@ class PictsController < ApplicationController
 
   def create
     @pict = Pict.new(picts_params)
+    @pict.user_id = current_user.id
     if @pict.save
       redirect_to picts_path, notice: "投稿しました！"
   else
