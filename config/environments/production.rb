@@ -36,7 +36,7 @@ Rails.application.configure do
   config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
-  config.action_mailer.default_url_options = { host: 'evening-ridge-81248.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'evening-ridge-81248.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
