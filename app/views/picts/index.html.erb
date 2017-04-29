@@ -9,12 +9,10 @@
 <% if pict.image? %>
 <%= image_tag(pict.image) %>
 <% end %>
-
-  <p>本文:<%= pict.content %></p>
+<br />
+  <p>本文:<%= pict.content %></p><br>
   <%= link_to "編集", edit_pict_path(pict.id) %>
   <%= link_to "削除", pict_path(pict.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
-
+<br /><br />
 <% end %>
-<div id="page-top-btn" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top">▲</a></p>
-</div>
+<br /><br /><br /><br /><br /><br />
