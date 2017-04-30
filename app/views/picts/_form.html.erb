@@ -6,14 +6,15 @@
     </div>
 <% end %>
 
-<%= f.label :image %>
+<%= f.label :画像を選択 %>
 <%= f.file_field :image %>
 <%= f.hidden_field :image_cache %>
 <br>
-<%= f.label :content %>
+<%= f.label :コメント %>
 <%= f.text_field :content, class: 'form-control' %>
 <br>
 <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
-<% end %>
+<% end %><br><br>
+
 
 <%= link_to "投稿一覧画面にもどる", picts_path %>

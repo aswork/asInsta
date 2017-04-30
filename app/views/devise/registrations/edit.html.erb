@@ -26,28 +26,28 @@
     <% if @minimum_password_length %>
 
     <% end %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+<br>
   <div class="field">
     <%= f.label :current_password %><br /> <i>(変更を確認するために現在のパスワードが必要です)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-<% end %>
+<% end %><br>
   <div class="field">
     <%= profile_img(@user) if profile_img(@user) %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
   </div>
 
+<br>
 
-  <div class="actions">
     <%= f.submit "更新" %>
-  </div>
+
 <% end %>
 <br /><br />
 <h3>アカウント削除</h3>
