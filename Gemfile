@@ -42,7 +42,8 @@ gem 'rails_12factor', group: :production
 gem 'twitter-bootstrap-rails'
 gem 'rails_admin'
 
-gem 'omniauth'
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'faraday', '< 0.10'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
