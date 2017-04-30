@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
   def facebook
       @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
@@ -10,6 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to new_user_registration_url
       end
     end
+
     def twitter
         # You need to implement the method below in your model
         @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)
@@ -21,24 +23,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           session["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")
           redirect_to new_user_registration_url
         end
-      end
-
-      def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
-      user = User.find_by(provider: auth.provider, uid: auth.uid)
-
-      unless user
-        user = User.new(
-            name:     auth.info.nickname,
-            image_url: auth.info.image,
-            provider: auth.provider,
-            uid:      auth.uid,
-            email:    auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
-            password: Devise.friendly_token[0, 20]
-        )
-        user.skip_confirmation!
-        user.save
-      end
-      user
     end
+
+      
 
 end

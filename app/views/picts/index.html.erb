@@ -9,13 +9,16 @@
 
 <% @picts.each do |pict| %>
 <br />
+<div class="row2">
+<p><%= profile_img(pict.user) %>&emsp;<%= pict.user.name %></p></div>
 <p class="resizeimage">
 <% if pict.image? %>
 <%= image_tag(pict.image) %>
 <% end %>
 </p>
 <br /><div class="row">
-  <p>本文:<%= pict.content %></p><br>
+
+  <p><%= pict.content %></p><br>
   <%= link_to "編集", edit_pict_path(pict.id), class: 'btn btn-default btn-sm btn-success' %>
   <%= link_to "削除", pict_path(pict.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
 <br /><br />
