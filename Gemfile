@@ -38,9 +38,18 @@ gem 'jquery-turbolinks'
 
 gem 'cancan'
 
+gem 'rails_12factor', group: :production
+gem 'twitter-bootstrap-rails'
+gem 'rails_admin'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 
 group :development do
   gem 'letter_opener_web'
+   gem 'dotenv-rails'
 end
 
 
@@ -49,12 +58,11 @@ group :development, :test do
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'pry-rails'
+  gem 'better_errors'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 
-gem 'rails_12factor', group: :production
-gem 'twitter-bootstrap-rails'
-gem 'rails_admin'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
